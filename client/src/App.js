@@ -23,6 +23,7 @@ import GetAllUser from "./components/admin/GetAllUser";
 import GetAllOrders from "./components/admin/GetAllOrders";
 import { useEffect } from "react";
 import { userLogin } from "./actions/UserAction";
+import Example from "./pages/example";
 
 function App() {
   const { loading, error, success } = useSelector(
@@ -31,16 +32,16 @@ function App() {
   const dispatch = useDispatch();
   const userdata = useSelector((state) => state.userLoginReducer);
   const { currentUser, admin } = userdata;
-  // const  admin=currentUser && currentUser.isAdmin;
+ 
 
-  console.log("hi", typeof admin );
+ 
 
   return (
     <>
       <ToastContainer />
       <TopBar />
       <Routes>
-        <Route
+        {/* <Route
           path="/"
           element={[
             
@@ -50,14 +51,14 @@ function App() {
               <Pizzalist />
             ),
           ]}
-        />
+        /> */}
 
         <Route path="/about" element={[ <About />]} />
         <Route path="/contact" element={[ <Contact />]} />
         <Route path="/policy" element={[<Policy />]} />
         <Route
-          path="/login"
-          element={[ currentUser ? <Navigate to="/" /> : <Login />]}
+          path="/"
+          element={<Example />}
         />
         <Route
           path="/register"

@@ -72,7 +72,7 @@ const getOrder = async (req, res) => {
 const getAllOrder = async (req, res) => {
   
   try {
-    const orders = await Order.find({});
+    const orders = await Order.find({}).sort({ _id: -1 });;
 
     return res.send(orders);
   } catch (error) {

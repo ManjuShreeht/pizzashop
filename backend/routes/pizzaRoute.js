@@ -16,6 +16,6 @@ router.post("/addpizza", addPizza);
 router.put("/edit/:id", editPizza);
 // router.post("/editpizza", EditPizza);
 router.delete("/delete/:id", deletepizza);
-router.get('/getbyid/:id',getPizzaId)
+router.get("/getbyid/:id", getPizzaId);
 
 module.exports = router;

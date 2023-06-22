@@ -5,7 +5,7 @@ export const addPizza = (pizza) => async (dispatch) => {
     dispatch({ type: "ADD_PIZZA_REQUEST" });
   
     try {
-      const res = await axios.post('http://localhost:8899/api/pizza/addPizza', {
+      const res = await axios.post('https://pizzaapp-e8ek.onrender.com/api/pizza/addPizza', {
        name:pizza.name,
        image:pizza.image,
        description:pizza.description,
@@ -28,7 +28,7 @@ export const addPizza = (pizza) => async (dispatch) => {
     dispatch({ type: 'EDIT_PIZZA_REQUEST' });
   
       try {
-      const res = await axios.put(`http://localhost:8899/api/pizza/edit/${id}`, {
+      const res = await axios.put(`https://pizzaapp-e8ek.onrender.com/api/pizza/edit/${id}`, {
        name:pizza.name,
        image:pizza.image,
        description:pizza.description,
@@ -55,7 +55,7 @@ export const addPizza = (pizza) => async (dispatch) => {
     dispatch({ type: 'GETID_PIZZA_REQUEST' });
   
       try {
-      const res = await axios.get(`http://localhost:8899/api/pizza/getbyid/${id}` )    
+      const res = await axios.get(`https://pizzaapp-e8ek.onrender.com/api/pizza/getbyid/${id}` )    
         
   
      
@@ -75,7 +75,7 @@ export const addPizza = (pizza) => async (dispatch) => {
     dispatch({ type: 'DELETE_PIZZA_REQUEST' });
   
       try {
-      const res = await axios.delete(`http://localhost:8899/api/pizza/delete/${id}`     
+      const res = await axios.delete(`https://pizzaapp-e8ek.onrender.com/api/pizza/delete/${id}`     
         
     )
      console.log(res);
@@ -92,7 +92,7 @@ export const addPizza = (pizza) => async (dispatch) => {
     dispatch({ type: 'GET_USER_REQUEST' });
   
       try {
-      const res = await axios.get(`http://localhost:8899/api/user/getalluser` 
+      const res = await axios.get(`https://pizzaapp-e8ek.onrender.com/api/user/getalluser` 
         
     )
      console.log(res);
@@ -108,7 +108,7 @@ export const addPizza = (pizza) => async (dispatch) => {
     dispatch({ type: 'GET_ORDER_REQUEST' });
   
       try {
-      const res = await axios.get(`http://localhost:8899/api/orders/getallorders` 
+      const res = await axios.get(`https://pizzaapp-e8ek.onrender.com/api/orders/getallorders` 
       
         
     )
@@ -125,7 +125,7 @@ export const addPizza = (pizza) => async (dispatch) => {
     dispatch({ type: 'GET_DELIVER_REQUEST' });
   
       try {
-      const res = await axios.post(`http://localhost:8899/api/orders/updateorders`,
+      const res = await axios.post(`https://pizzaapp-e8ek.onrender.com/api/orders/updateorders`,
       {id}
         
        )

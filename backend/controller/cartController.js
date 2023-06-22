@@ -17,7 +17,7 @@ const addcart = async (req, res) => {
 const getcart = async (req, res) => {
   const { userId } = req.body;
   try {
-    const cart = await Cart.find({ userId: userId });
+    const cart = await Cart.find({ userId: userId }).sort({ _id: -1 });
     res.send(cart);
   } catch (error) {
     console.log(error);

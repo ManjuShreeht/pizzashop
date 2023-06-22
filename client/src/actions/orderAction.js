@@ -5,7 +5,7 @@ export const placeOrder = (token, subtotal,currentUser,cart) => async (dispatch,
   dispatch({ type: "PLACE_ORDER_REQUEST" });
   
   try {
-    const res = await axios.post("http://localhost:8899/api/orders/placeorder", {
+    const res = await axios.post("https://pizzaapp-e8ek.onrender.com/api/orders/placeorder", {
       token,
       subtotal,
       currentUser,
@@ -27,7 +27,7 @@ export const getUserOrders = (currentUser) => async (dispatch, getState) => {
   dispatch({ type: "GET_User_Orders_REQUEST" });
   const userId=currentUser._id
   try {
-    const res = await axios.post("http://localhost:8899/api/orders/getuserorders", {
+    const res = await axios.post("https://pizzaapp-e8ek.onrender.com/api/orders/getuserorders", {
             userid: userId
     });
     
@@ -44,7 +44,7 @@ export const deleteUserOrders = (orderId) => async (dispatch, getState) => {
   dispatch({ type: "DELETE_User_Orders_REQUEST" });
   // const orderId=orderId
   try {
-    const res = await axios.post("http://localhost:8899/api/orders/deleteorder", {
+    const res = await axios.post("https://pizzaapp-e8ek.onrender.com/api/orders/deleteorder", {
       orderId:orderId
     });
     

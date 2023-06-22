@@ -4,7 +4,7 @@ import {  toast } from 'react-toastify';
 export const getAllPizza = () => async (dispatch) => {
   dispatch({ type: "GET_PIZZA_REQUEST" });
   try {
-    const res = await axios.get("http://localhost:8899/api/pizza/getall");
+    const res = await axios.get("https://pizzaapp-e8ek.onrender.com/api/pizza/getall");
    
     dispatch({ type: "GET_PIZZA_SUCCESS", payload: res.data });
   } catch (error) {
@@ -18,7 +18,7 @@ export const FilterPizza = (searchkey,category) => async (dispatch) => {
   var filterdata;
   dispatch({ type: "GET_PIZZA_REQUEST" });
   try {
-    const res = await axios.get("http://localhost:8899/api/pizza/getall");
+    const res = await axios.get("https://pizzaapp-e8ek.onrender.com/api/pizza/getall");
     // console.log(filterdata)
    filterdata=res.data.filter(pizza=>pizza.name.toLowerCase().includes(searchkey))
    if(category !=='all'){

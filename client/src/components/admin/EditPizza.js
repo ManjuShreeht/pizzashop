@@ -12,13 +12,13 @@ const EditPizza = () => {
   const { id } = useParams();
 
   const single = useSelector((state) => state.getIdPizzasReducer);
+  
   const { singleItem } = single;
   const dispatch = useDispatch();
- 
 
   const small = singleItem[0] && singleItem[0].prices[0].small;
-   const large=singleItem&& singleItem[0].prices[0].large
-   const medium=singleItem && singleItem[0].prices[0].medium
+  const large = singleItem && singleItem[0].prices[0].large;
+  const medium = singleItem && singleItem[0].prices[0].medium;
   // console.log(singleItem[0].prices[0].small)
   const [name, setname] = useState(singleItem[0].name);
   const [smallPrice, setsmallPrice] = useState(small);
@@ -35,7 +35,6 @@ const EditPizza = () => {
   useEffect(() => {
     dispatch(getPizzaId(id));
     // setname(singleItem[0].name)
-    
   }, [id]);
   const submitForm = (e) => {
     e.preventDefault();

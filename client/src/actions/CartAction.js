@@ -6,7 +6,7 @@ export const addToCart=(pizza,quantity,varient,currentUser)=>async( dispatch,get
     const userId=currentUser._id;
    
     try{
-        const res= await axios.post('http://localhost:8899/api/cart/addcart' ,{
+        const res= await axios.post('https://pizzaapp-e8ek.onrender.com/api/cart/addcart' ,{
             userId:userId,
             pizzaId:pizza._id,
             name:pizza.name, 
@@ -53,7 +53,7 @@ export const getCart=(currentUser)=>async( dispatch,getState)=>{
     const userId=currentUser._id;
     console.log()
     try{
-        const res= await axios.post('http://localhost:8899/api/cart/usercart' ,{
+        const res= await axios.post('https://pizzaapp-e8ek.onrender.com/api/cart/usercart' ,{
             userId:userId,
                       
         },{
@@ -76,7 +76,7 @@ export const deleteCart=(cart)=>async( dispatch,getState)=>{
     const cartId=cart._id;
     
     try{
-        const res= await axios.post('http://localhost:8899/api/cart/deletecart' ,{
+        const res= await axios.post('https://pizzaapp-e8ek.onrender.com/api/cart/deletecart' ,{
             cartId:cartId
                       
         },{
@@ -107,7 +107,7 @@ export const updateCart=(cart,quantity,varient)=>async( dispatch,getState)=>{
     }
     
         else {
-        const res= await axios.put('http://localhost:8899/api/cart/updatecart' ,{
+        const res= await axios.put('https://pizzaapp-e8ek.onrender.com/api/cart/updatecart' ,{
             cartId:cartId,
             quantity:quantity,
             price:Number(cart.prices[0][varient]*quantity)
@@ -132,7 +132,7 @@ export const deletecart=(currentUser)=>async( dispatch,getState)=>{
     const userId=currentUser._id;
     
     try{
-        const res= await axios.post('http://localhost:8899/api/cart/deleteusercart' ,{
+        const res= await axios.post('https://pizzaapp-e8ek.onrender.com/api/cart/deleteusercart' ,{
             userId:userId
                       
         },{
